@@ -1,0 +1,13 @@
+.scroll{
+    overflow:scroll;
+}
+.xscroll{
+    overflow-x:scroll;
+}
+.yscroll{
+    overflow-y:scroll;
+}
+label.required:after{
+    content: " *";
+    color: red;
+}
