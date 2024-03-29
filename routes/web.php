@@ -15,14 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login','Users@login')->name('login');
 
-
-
-
+Route::get('/','Customers@main_page')->name('main');
+Route::get('shop','Customers@shop')->name('shop');
+Route::get('cart','Customers@cart')->name('cart');
+Route::get('checkout','Customers@checkout')->name('checkout');
 
 Route::get('seller-login','Sellers@login')->name('seller.login');
 Route::post('seller-logaction','Sellers@logaction')->name('seller.logaction');
 Route::get('seller-register','Sellers@register')->name('seller.register');
 Route::post('user-save','Sellers@save')->name('seller.save');
+
+Route::get('ajax-products','Ajax@products')->name('ajax.products');
 
 Route::group(['middleware'=> 'sellerauth'], function () {
     Route::get('seller-home','Sellers@shome')->name('seller.home');
@@ -86,5 +89,12 @@ Route::group(['middleware'=> 'adminauth'], function () {
     Route::get('brand-edit/{bid}','Brands@edit')->name('brand.edit');
     Route::post('brand-update','Brands@update')->name('brand.update');
     Route::get('brand-delete/{bid}','Brands@delete')->name('brand.delete');
+
+    Route::get('Banners','Banners@report')->name('banner.report');
+    Route::get('Banner-add','Banners@add')->name('banner.add');
+    Route::post('Banner-save','Banners@save')->name('banner.save');
+    Route::get('Banner-edit/{rid}','Banners@edit')->name('banner.edit');
+    Route::post('Banner-update','Banners@update')->name('banner.update');
+    Route::get('Banner-delete/{rid}','Banners@delete')->name('banner.delete');
     
 });

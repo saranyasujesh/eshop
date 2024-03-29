@@ -70,11 +70,16 @@ class ProductsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+
+
+
+            
             Column::computed('image')
                   ->exportable(false)
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
+            Column::make('code'),
             Column::make('name'),
             Column::make('company'),
             Column::make('category'),
@@ -83,7 +88,7 @@ class ProductsDataTable extends DataTable
                   ->exportable(false)
                   ->printable(false)
                   ->width(60)
-                  ->addClass('text-center'),
+                  ->addClass('text-center'), 
         ];
     }
 

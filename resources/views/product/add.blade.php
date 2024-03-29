@@ -12,8 +12,16 @@
                     {{ session('msg') }}
                 </div>
             @endif
+
             <div class="row">
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-sm-2">
+                    <div class="form-group">
+                        <label for="code" class="required">Code</label>
+                        <input type="text" class="form-control @error('code') border-danger @enderror" id="code" name="code" value="{{ old('code') }}">
+                        @error('code')<p class="text-danger">{{ $message }}</p>@enderror
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2">
                     <div class="form-group">
                         <label for="name" class="required">Name</label>
                         <input type="text" class="form-control @error('name') border-danger @enderror" id="name" name="name" value="{{ old('name') }}">
@@ -26,7 +34,7 @@
                         <select class="form-control @error('company') border-danger @enderror" id="company" name="company">
                             <option value="">Select</option>
                             @foreach($slr as $seller)
-                                <option value="{{ $seller->company }}"  {{ old('company')==$seller->company ? "selected":"" }} >{{ $seller->company }}</option>
+                                <option value="{{ $seller->id }}"  {{ old('company')==$seller->company ? "selected":"" }} >{{ $seller->company }}</option>
                             @endforeach
                         </select>
                         @error('company')<p class="text-danger">{{ $message }}</p>@enderror
@@ -38,7 +46,7 @@
                         <select class="form-control @error('category') border-danger @enderror" id="category" name="category">
                             <option value="">Select</option>
                             @foreach($cat as $category)
-                                <option value="{{ $category->category_name }}"  {{ old('category')==$category->category_name ? "selected":"" }} >{{ $category->category_name }}</option>
+                                <option value="{{ $category->id }}"  {{ old('category')==$category->category_name ? "selected":"" }} >{{ $category->category_name }}</option>
                             @endforeach
                         </select>
                         @error('category')<p class="text-danger">{{ $message }}</p>@enderror
@@ -52,7 +60,7 @@
                         <select class="form-control @error('brand') border-danger @enderror" id="brand" name="brand">
                             <option value="">Select</option>
                             @foreach($brn as $brand)
-                                <option value="{{ $brand->brand_name }}"  {{ old('brand')==$brand->brand_name ? "selected":"" }} >{{ $brand->brand_name }}</option>
+                                <option value="{{ $brand->id }}"  {{ old('brand')==$brand->brand_name ? "selected":"" }} >{{ $brand->brand_name }}</option>
                             @endforeach
                         </select>
                         @error('brand')<p class="text-danger">{{ $message }}</p>@enderror
@@ -121,6 +129,36 @@
                         <label for="description">Description</label>
                         <textarea name="description" id="description" class="form-control @error('description') border-danger @enderror" rows="1">{{ old('description') }}</textarea>
                         @error('description')<p class="text-danger">{{ $message }}</p>@enderror
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <div class="form-group">
+                        <label for="trending_item"> Trending Item</label>
+                        <input type="checkbox" class="form-control @error('trending_item') border-danger @enderror" id="trending_item" name="trending_item" value="Yes" >
+                        @error('trending_item')<p class="text-danger">{{ $message }}</p>@enderror
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group">
+                        <label for="hot_item"> Hot Item</label>
+                        <input type="checkbox" class="form-control @error('hot_item') border-danger @enderror" id="hot_item" name="hot_item" value="Yes">
+                        @error('hot_item')<p class="text-danger">{{ $message }}</p>@enderror
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group">
+                        <label for="best_seller"> Best Seller</label>
+                        <input type="checkbox" class="form-control @error('best_seller') border-danger @enderror" id="best_seller" name="best_seller" value="Yes">
+                        @error('best_seller')<p class="text-danger">{{ $message }}</p>@enderror
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group">
+                        <label for="deal_of_the_day"> Deal of the Day</label>
+                        <input type="checkbox" class="form-control @error('deal_of_the_day') border-danger @enderror" id="deal_of_the_day" name="deal_of_the_day" value="Yes">
+                        @error('deal_of_the_day')<p class="text-danger">{{ $message }}</p>@enderror
                     </div>
                 </div>
             </div>

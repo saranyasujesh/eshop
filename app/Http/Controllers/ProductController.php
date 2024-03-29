@@ -37,6 +37,7 @@ class ProductController extends Controller
     public function save(Request $request){
 
         $validate = $request->validate([
+            'code' => ['required'],
             'name' => ['required'],
             'company' => ['required'],
             'category' => ['required'],
@@ -46,7 +47,12 @@ class ProductController extends Controller
             'rprice' => ['required','numeric'],
             'description' => ['nullable'],
             'main_image' => ['nullable','image'],
-            'images.*' => ['nullable','image']
+            'images.*' => ['nullable','image'],
+            'trending_item' => ['nullable'],
+            'hot_item' => ['nullable'],
+            'best_seller' => ['nullable'],
+            'deal_of_the_day' => ['nullable']
+
         ]);
 
         
@@ -72,6 +78,7 @@ class ProductController extends Controller
         }
 
         $product = Product::create([
+            'code' => $request->code,
             'name' => $request->name,
             'company' => $request->company,
             'category' => $request->category,
@@ -83,7 +90,11 @@ class ProductController extends Controller
             'reduced_price' => $request->rprice,
             'description' => $request->description,
             'main_image' => $file_name,
-            'images' => $filename2
+            'images' => $filename2,
+            'trending_item' => $request->has('trending_item') ? 'Yes' : 'No' ,
+            'hot_item' => $request->has('hot_item') ? 'Yes' : 'No',
+            'best_seller' => $request->has('best_seller') ? 'Yes' : 'No',
+            'deal_of_the_day' => $request->has('deal_of_the_day') ? 'Yes' : 'No',
         ]);
         if($product){
             $msg_array = 'Product Added Successfully';
@@ -106,6 +117,7 @@ class ProductController extends Controller
     public function update(Request $request)
     {
         $validate = $request->validate([
+            'code' => ['required'],
             'name' => ['required'],
             'company' => ['required'],
             'category' => ['required'],
@@ -115,7 +127,11 @@ class ProductController extends Controller
             'rprice' => ['required','numeric'],
             'description' => ['nullable'],
             'main_image' => ['nullable','image'],
-            'images.*' => ['nullable','image']
+            'images.*' => ['nullable','image'],
+            'trending_item' => ['nullable'],
+            'hot_item' => ['nullable'],
+            'best_seller' => ['nullable'],
+            'deal_of_the_day' => ['nullable']
         ]);
 
         $prd = Product::find(decrypt($request->pid));
@@ -145,6 +161,7 @@ class ProductController extends Controller
         }
 
         $update = $prd->update([
+            'code' => $request->code,
             'name' => $request->name,
             'company' => $request->company,
             'category' => $request->category,
@@ -156,7 +173,11 @@ class ProductController extends Controller
             'reduced_price' => $request->rprice,
             'description' => $request->description,
             'main_image' => $file_name,
-            'images' => $filename2
+            'images' => $filename2,
+            'trending_item' => $request->has('trending_item') ? 'Yes' : 'No' ,
+            'hot_item' => $request->has('hot_item') ? 'Yes' : 'No',
+            'best_seller' => $request->has('best_seller') ? 'Yes' : 'No',
+            'deal_of_the_day' => $request->has('deal_of_the_day') ? 'Yes' : 'No',
         ]);
            
         if($update){

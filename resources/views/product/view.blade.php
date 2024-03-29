@@ -11,6 +11,10 @@
                         <div class="col-7 text-danger"><img src="{{ url('storage/app/public/products/main_images/'.$product->main_image) }}" width="150px" height="100px"></div>
                     </div>
                     <div class="row form-group">
+                        <div class="col-5">Product Code : </div>
+                        <div class="col-7 text-danger">{{ $product->code }}</div>
+                    </div>
+                    <div class="row form-group">
                         <div class="col-5">Product Name : </div>
                         <div class="col-7 text-danger">{{ $product->name }}</div>
                     </div>
