@@ -673,18 +673,18 @@
 				<div class="row">
 					<div class="col-lg-6 col-12 padding-right">
 						<div class="image">
-							<img src="https://via.placeholder.com/750x590" alt="#">
+							<img src="{{ url('storage/app/public/deal/'.$deal->image) }}" alt="#">
 						</div>	
 					</div>	
 					<div class="col-lg-6 col-12 padding-left">
 						<div class="content">
 							<div class="heading-block">
-								<p class="small-title">Deal of day</p>
-								<h3 class="title">Beatutyful dress for women</h3>
-								<p class="text">Suspendisse massa leo, vestibulum cursus nulla sit amet, frungilla placerat lorem. Cars fermentum, sapien. </p>
-								<h1 class="price">$1200 <s>$1890</s></h1>
+								<p class="small-title">{{ $deal->sub_heading }}</p>
+								<h3 class="title">{{ $deal->heading }}</h3>
+								<p class="text">{{ $deal->description }}</p>
+								<h1 class="price">{{ 'Rs. '.$deal->reduced_price }} <s>{{ 'Rs. '.$deal->actual_price }}</s></h1>
 								<div class="coming-time">
-									<div class="clearfix" data-countdown="2021/02/30"></div>
+									<div class="clearfix" data-countdown="{{ $deal->time_period }}"></div>
 								</div>
 							</div>
 						</div>	
@@ -694,58 +694,6 @@
 		</div>
 	</section>
 	<!-- /End Cowndown Area -->
-	
-	<!-- Start Shop Blog  -->
-	<section class="shop-blog section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="section-title">
-						<h2>From Our Blog</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July , 2020. Monday</p>
-							<a href="#" class="title">Sed adipiscing ornare.</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Man’s Fashion Winter Sale</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Women Fashion Festive</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Blog  -->
 	
 	<!-- Start Shop Services Area -->
 	<section class="shop-services section home">

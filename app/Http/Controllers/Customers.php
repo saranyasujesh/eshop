@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Banner;
+use App\Models\Deal;
 use App\Models\Brand;
 use App\Models\Product;
 
@@ -14,9 +15,10 @@ class Customers extends Controller
     {
         $categories = Category::all();
         $banner = Banner::where('active','Yes')->first();
+        $deal = Deal::where('active','Yes')->first();
         $bnr = Banner::where('active','No')->first();
         $hotitems = Product::where('hot_item','Yes')->get()->take(10);
-        return view('customer.home',compact('categories','banner','hotitems','bnr'));
+        return view('customer.home',compact('categories','banner','hotitems','bnr','deal'));
     }
     public function shop()
     {

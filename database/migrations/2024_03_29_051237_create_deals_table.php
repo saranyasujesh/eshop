@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('deals', function (Blueprint $table) {
             $table->id();
-            $table->string('category');
+            $table->unsignedBigInteger('product_id');
+            $table->string('sub_heading');
             $table->string('heading');
             $table->string('description');
+            $table->unsignedBigInteger('actual_price');
+            $table->unsignedBigInteger('reduced_price');
+            $table->string('image');
+            $table->dateTime('time_period');
             $table->string('active');
             $table->timestamps();
         });

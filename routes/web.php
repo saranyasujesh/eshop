@@ -96,5 +96,9 @@ Route::group(['middleware'=> 'adminauth'], function () {
     Route::get('Banner-edit/{rid}','Banners@edit')->name('banner.edit');
     Route::post('Banner-update','Banners@update')->name('banner.update');
     Route::get('Banner-delete/{rid}','Banners@delete')->name('banner.delete');
+
+    Route::get('Deals','Deals@report')->name('deal.report');
+    Route::get('Deal-add','Deals@add')->name('deal.add');
+    Route::post('Deal-save','Deals@save')->name('deal.save');
     
 });
