@@ -17,8 +17,16 @@ Route::get('/login','Users@login')->name('login');
 
 Route::get('/','Customers@main_page')->name('main');
 Route::get('shop','Customers@shop')->name('shop');
-Route::get('cart','Customers@cart')->name('cart');
-Route::get('checkout','Customers@checkout')->name('checkout');
+Route::get('customer-login','Customers@login')->name('log');
+Route::post('customer-logaction','Customers@logaction')->name('logact');
+Route::get('customer-register','Customers@register')->name('customer.register');
+Route::post('customer-save','Customers@save')->name('customer.save');
+
+Route::group(['middleware'=> 'customerauth'], function () {
+    Route::get('cart','Customers@cart')->name('cart');
+    Route::get('checkout','Customers@checkout')->name('checkout');
+});
+
 
 Route::get('seller-login','Sellers@login')->name('seller.login');
 Route::post('seller-logaction','Sellers@logaction')->name('seller.logaction');

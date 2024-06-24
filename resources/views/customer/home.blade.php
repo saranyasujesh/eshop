@@ -95,7 +95,7 @@
 								<li><i class="ti-location-pin"></i> Store location</li>
 								<li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
 								<li><i class="ti-user"></i> <a href="#">My account</a></li>
-								<li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+								<li><i class="ti-power-off"></i><a href=" {{ route('log') }} ">Login</a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -268,7 +268,7 @@
 													<li class="active"><a href="#">Home</a></li>
 													<li><a href="{{ route('shop') }}">Shop Grid</a></li>
 													<li><a href="{{ route('cart') }}">Cart</a></li>
-													<li><a href="checkout.html">Checkout</a></li>									
+													<li><a href="{{ route('checkout') }}">Checkout</a></li>									
 													<li><a href="contact.html">Contact Us</a></li>
 												</ul>
 										</div>

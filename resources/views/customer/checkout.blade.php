@@ -27,15 +27,15 @@
 	<!-- Themify Icons -->
     <link rel="stylesheet" href="{{ asset('public/customers/css/themify-icons.css') }}">
 	<!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{{ asset('public/customers/css/niceselect.css">
+    <link rel="stylesheet" href="{{ asset('public/customers/css/niceselect.css') }}">
 	<!-- Animate CSS -->
-    <link rel="stylesheet" href="{{ asset('public/customers/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('public/customers/css/animate.css') }}">
 	<!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="{{ asset('public/customers/css/flex-slider.min.css">
+    <link rel="stylesheet" href="{{ asset('public/customers/css/flex-slider.min.css') }}">
 	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{ asset('public/customers/css/owl-carousel.css">
+    <link rel="stylesheet" href="{{ asset('public/customers/css/owl-carousel.css') }}">
 	<!-- Slicknav -->
-    <link rel="stylesheet" href="{{ asset('public/customers/css/slicknav.min.css">
+    <link rel="stylesheet" href="{{ asset('public/customers/css/slicknav.min.css') }}">
 	
 	<!-- Eshop StyleSheet -->
 	<link rel="stylesheet" href="{{ asset('public/customers/css/reset.css">
@@ -188,24 +188,12 @@
 										<div class="navbar-collapse">	
 											<div class="nav-inner">	
 												<ul class="nav main-menu menu navbar-nav">
-													<li class="active"><a href="#">Home</a></li>
-													<li><a href="#">Product</a></li>												
-													<li><a href="#">Service</a></li>
-													<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
-														<ul class="dropdown">
-															<li><a href="shop-grid.html">Shop Grid</a></li>
-															<li><a href="cart.html">Cart</a></li>
-															<li><a href="checkout.html">Checkout</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Pages</a></li>									
-													<li><a href="#">Blog<i class="ti-angle-down"></i></a>
-														<ul class="dropdown">
-															<li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
-														</ul>
-													</li>
+													<li><a href="{{ route('main') }}">Home</a></li>
+													<li><a href="{{ route('shop') }}">Shop Grid</a></li>
+													<li><a href="{{ route('cart') }}">Cart</a></li>
+													<li  class="active"><a href="{{ route('checkout') }}">Checkout</a></li>									
 													<li><a href="contact.html">Contact Us</a></li>
-												</ul>
+											</ul>
 											</div>
 										</div>
 									</nav>

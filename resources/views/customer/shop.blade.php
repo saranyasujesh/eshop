@@ -189,7 +189,7 @@
 													<li><a href="{{ route('main') }}">Home</a></li>
 													<li class="active"><a href="{{ route('shop') }}">Shop Grid</a></li>
 													<li><a href="{{ route('cart') }}">Cart</a></li>
-													<li><a href="checkout.html">Checkout</a></li>									
+													<li><a href="{{ route('checkout') }}">Checkout</a></li>									
 													<li><a href="contact.html">Contact Us</a></li>
 											</ul>
 										</div>
